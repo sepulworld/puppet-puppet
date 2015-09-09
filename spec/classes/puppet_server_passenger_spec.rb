@@ -37,6 +37,27 @@ describe 'puppet::server::passenger' do
       end
     end
 
+    describe 'with passenger settings' do
+      let :params do
+        default_params.merge({
+          :server_passenger_max_pool         => 12,
+          :server_passenger_max_requests     => 100,
+          :server_passenger_high_performance => 'Off',
+          :server_passenger_pool_idle_time   => 500,
+        })
+      end
+
+      it 'should include the mod passenger' do
+        should_contain_apache__mod__passenger.with({
+          :passenger_max_pool         => 12,
+          :passenger_max_requests     => 100,
+          :passenger_high_performance => 'Off',
+          :passenger_pool_idle_time   => 500,
+        })
+      end
+    end 
+          
+
     describe 'with SSL CRL' do
       let :params do
         default_params.merge({

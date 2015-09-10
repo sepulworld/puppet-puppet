@@ -308,25 +308,25 @@
 #
 # === Advanced server parameters:
 #
-# $server_httpd_service::          Apache/httpd service name to notify
-#                                  on configuration changes. Defaults
-#                                  to 'httpd' based on the default
-#                                  apache module included with foreman-installer.
+# $server_httpd_service::              Apache/httpd service name to notify
+#                                      on configuration changes. Defaults
+#                                      to 'httpd' based on the default
+#                                      apache module included with foreman-installer.
 #
-# $server_service_fallback::       If passenger is not used, do we want to fallback
-#                                  to using the puppetmaster service? Set to false
-#                                  if you disabled passenger and you do NOT want to
-#                                  use the puppetmaster service. Defaults to true.
-#                                  type:boolean
+# $server_service_fallback::           If passenger is not used, do we want to fallback
+#                                      to using the puppetmaster service? Set to false
+#                                      if you disabled passenger and you do NOT want to
+#                                      use the puppetmaster service. Defaults to true.
+#                                      type:boolean
 #
-# $server_passenger_max_pool::     The PassengerMaxPoolSize parameter. If your
-#                                  host is low on memory, it may be a good thing
-#                                  to lower this. Defaults to 12.
-#                                  type:integer
+# $server_passenger_max_pool::         The PassengerMaxPoolSize parameter. If your
+#                                      host is low on memory, it may be a good thing
+#                                      to lower this. Defaults to 12.
+#                                      type:integer
 #
-# $server_passenger_max_requests:: The PassengerMaxRequests parameter. 
-#                                  Defaults to 0, which means there is no maximum.
-#                                  type:integer
+# $server_passenger_max_requests::     The PassengerMaxRequests parameter. 
+#                                      Defaults to 0, which means there is no maximum.
+#                                      type:integer
 #
 # $server_passenger_high_performance:: The PassengerHighPerformance parameter. 
 #                                      Defaults to Off. By default, Passenger is compatible 

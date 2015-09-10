@@ -149,7 +149,7 @@ class puppet::params {
   $server_implementation             = 'master'
   $server_passenger                  = true
   $server_service_fallback           = true
-  $server_passenger_max_pool         = 12
+  $server_passenger_max_pool_size    = 12
   $server_passenger_max_requests     = 100
   $server_passenger_high_performance = 'Off'
   $server_passenger_pool_idle_time   = 500
@@ -165,7 +165,7 @@ class puppet::params {
   $server_http                       = false
   $server_http_port                  = 8139
   $server_http_allow                 = []
-
+  
   # Need a new master template for the server?
   $server_template = 'puppet/server/puppet.conf.erb'
 

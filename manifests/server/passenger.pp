@@ -4,7 +4,7 @@
 #
 class puppet::server::passenger (
   $app_root                   = $::puppet::server_app_root,
-  $passenger_max_pool         = $::puppet::server_passenger_max_pool,
+  $passenger_max_pool_size    = $::puppet::server_passenger_max_pool_size,
   $passenger_max_requests     = $::puppet::server_passenger_max_requests,
   $passenger_high_performance = $::puppet::server_passenger_high_performance,
   $passenger_pool_idle_time   = $::puppet::server_passenger_pool_idle_time,
@@ -22,7 +22,13 @@ class puppet::server::passenger (
   $http_allow                 = $::puppet::server_http_allow,
 ) {
   include ::apache
-  include ::apache::mod::passenger
+
+  class { '::apache::mod::passenger':
+    passenger_max_pool_size    => $passenger_max_pool_size,
+    passenger_max_requests     => $passenger_max_requests,
+    passenger_high_performance => $passenger_high_performance,
+    passenger_pool_idle_time   => $passenger_pool_idle_time,
+  }
 
   class { '::puppet::server::rack':
     app_root => $app_root,
